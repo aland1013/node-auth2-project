@@ -5,7 +5,7 @@ module.exports = {
   findById,
   findBy,
   find,
-  matchDept
+  findByDept
 };
 
 async function add(user) {
@@ -30,7 +30,7 @@ function find() {
   return db('users').select('id', 'username', 'department').orderBy('id');
 }
 
-function matchDept(department) {
+function findByDept(department) {
   return db('users')
     .select('id', 'username', 'department')
     .where(department)
